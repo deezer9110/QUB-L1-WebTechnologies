@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+    <!--Added a gameContainer for option to make game not full screen-->
+    <div id="gameContainer">
+        <!--These images and UI get layered in this way in css by z-index-->
+        <img src="Images/Duck Round.png" id="gameBackground">
+
+        <div id="game">
+
+        </div>
+
+        <img src="Images/Frame.png" id="gameFrame">
+
+
+        <div id="gameUI">
+            <div id="bulletCountUI" class="UI">
+                <img src="Images/bullet.png" class="bulletUI">
+                <img src="Images/bullet.png" class="bulletUI">
+                <img src="Images/bullet.png" class="bulletUI">
+                <img src="Images/bullet.png" class="bulletUI">
+            </div>
+            <div id="timeLeftUI" class="UI">
+                <div id="progressBar">
+                    <div id="progressFill"></div>
+                </div>
+            </div>
+            <div id="scoreUI" class="UI">| score: 0</div>
+        </div>
+        <div id="tips" class="UI"></div>
+        <img src="Images/gun.png" id="gunImg">
+
+    </div>
+
+</body>
+
+<script src="engine.js"></script>
+
+</html>

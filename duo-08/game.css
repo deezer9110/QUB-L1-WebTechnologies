@@ -1,0 +1,149 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: maroon;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*Main game container
+ Currently not taking up whole 
+ section but can be changed*/
+#gameContainer {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  border: 5px solid white;
+}
+
+/*I am using z index to layer 
+images on top of each other*/
+.target {
+  position: absolute;
+  width: 8%;
+  height: 8%;
+  border-radius: 100%;
+  border-radius: 10%;
+  z-index: 1;
+}
+
+/*Ensuring background and frame 
+all have default positions*/
+#gameBackground,
+#gameFrame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: url(Images/crosshair.png), auto;
+}
+/*Fixing game position and 
+giving it a layer value of 2*/
+#game {
+  position: absolute;
+  top: 22%;
+  left: 15%;
+  width: 70%;
+  height: 60%;
+  z-index: 2;
+  justify-content: center;
+  cursor: crosshair;
+  cursor: url(Images/crosshair.png), auto;
+}
+/*Frame is above target section
+as it has a transparent opening 
+for targets in middle so i turned
+off pointer event so player can 
+shoot through frame*/
+#gameFrame {
+  z-index: 3;
+  pointer-events: none;
+}
+
+#gameUI {
+  width: 35vw;
+  color: white;
+  font-size: 1vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/*Displaying UI above everything else*/
+.UI {
+  z-index: 4;
+}
+
+#progressBar {
+  width: 10vw;
+  height: 4vh; 
+  background-color: black; 
+  display: flex;
+  align-items: center;
+}
+
+#progressFill {
+  margin-left: 2.5%;
+  height: 80%;
+  width: 95%;
+  background-color: red; 
+}
+/*Fixing slight offset and making text bolder*/
+#scoreUI{
+  margin-top: -1vh;
+  font-size: 2vw;
+  font-weight: bolder;
+}
+
+/* bullet UI size*/
+.bulletUI{
+  width: 3vw;
+  height: 4vh;
+}
+
+/* Gun bang */
+.bang{
+position: absolute;
+height: 2vh;
+width: 2vw;
+}
+/* Tips, only used for reload tip for now*/
+#tips{
+  margin-left: 1vw;
+  color: white;
+  font-size: 1vw;
+  font-weight: bold;
+  position: absolute;
+}
+
+/* gun image style */
+
+#gunImg {
+  z-index: 6;
+  pointer-events: none;
+  position: relative; 
+  top: 45vh;
+  left: 0vw;
+}
+/* Death animations */
+
+@keyframes basicDeath {
+  0% {
+  }
+  25% {
+    transform: translateY(3vh);
+  }
+  100% {
+    transform: translateY(-8vh);
+    opacity: 0;
+  }
+}
